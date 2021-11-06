@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = busqueda_binaria
-build_property.ProjectDir = /home/jparrilla/Vídeos/busqueda_binaria/
+build_property.ProjectDir = /home/jparrilla/Vídeos/estructuras_de_datos_y_algoritmos/busqueda_binaria/
