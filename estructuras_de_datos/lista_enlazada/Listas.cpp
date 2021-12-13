@@ -5,17 +5,20 @@ using namespace std;
 struct Node 
 {
     int data;
-    Node *next;
+    struct Node *next;
 };
 
+typedef struct Node *List;
 
-void insertInFirstPosition(Node *list, int data)
+
+void insertInFirstPosition(List &list, int data)
 {
-    Node *node = new Node();
-    node->data = data;
-    node->next = list;
+    List q;
+    q = new(struct Node);
+    q->data = data;
+    q->next = list;
 
-    list = node;
+    list = q;
 }
 
 void printList(Node *list)
@@ -24,15 +27,33 @@ void printList(Node *list)
 
     while (n != NULL)
     {
-        printf(n->data + " \n");
-        // cout << n->data << endl;
+        // printf(n->data + ' \n');
+        cout << n->data << "\n" << endl;
     }
+}
+
+int length(Node *list) 
+{
+    int cont = 0;
+    // variable auxiliar:
+    // p es un Puntero.
+    Node *p = list;
+
+    while (p != NULL) 
+    {
+        cont++;
+        *p = *p->next;
+    }
+
+    return cont;
 }
 
 int main()
 {
-    Node *list;
+    List list = NULL;
     insertInFirstPosition(list, 3);
-    printList(list);
+    // printList(list);
+    insertInFirstPosition(list, 2);
+    cout << "Tamaño es " << length(list) << endl;
     return 0;
 }
