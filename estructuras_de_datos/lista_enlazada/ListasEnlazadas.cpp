@@ -2,6 +2,13 @@
 #include <stdio.h>
 using namespace std;
 
+/**
+ * Compilar:
+ *  g++ -o eje ListasEnlazadas.cpp
+ * Ejecutar:
+ * ./eje
+ * 
+ **/
 
 struct Node {
     int data;
