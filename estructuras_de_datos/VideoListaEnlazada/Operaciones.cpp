@@ -34,6 +34,9 @@ int sum(List &list);
 /* retorna el total de elementos pares en la lista */
 int pars(List &list);
 
+/* retorna true si todos los elementos son pares */
+bool allPars(List &list);
+
 /* retorna el minimo */
 int min(List &list);
 
@@ -45,12 +48,28 @@ bool sumToEnd(List &list);
 
 int pars(List &list)
 {
-    Node *aux = list;
+    List p = list;
     int totalPars = 0;
-    while (aux->next != NULL)
-        if (aux->data % 2 == 0) totalPars++;
+    while (p != NULL) {
+        if (p->data % 2 == 0) totalPars++;
+        p = p->next;
+    }
 
     return totalPars;
+}
+
+
+bool allPars(List &list)
+{
+    List p = list;
+    bool allPars = true;
+
+    while (allPars && p != NULL) {
+        if (p->data % 2 != 0) 
+            allPars = false;
+        p = p->next;
+    }
+    return allPars;
 }
 
 
